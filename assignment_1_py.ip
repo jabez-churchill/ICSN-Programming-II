@@ -1,0 +1,50 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "mount_file_id": "1cuKUFZKLQv_zzwSIfobhHCJ0pV7o771K",
+      "authorship_tag": "ABX9TyORtUQGZRKjUu2WAud/00IW"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "n0vAf7vQ4W-F",
+        "outputId": "690afdfb-d39f-4920-b8cd-0aa6f8512825"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Say my name.\n"
+          ]
+        }
+      ],
+      "source": [
+        "myString = \"Say \" #TODO(1) ✓\n",
+        "myName = \"my name.\" #TODO(2) ✓\n",
+        "\n",
+        "def myFunction(myParameter): #TODO(3) ✓\n",
+        "  print(myParameter) \n",
+        "\n",
+        "\n",
+        "myFunction(myString + myName) #TODO(4) ✓\n"
+      ]
+    }
+  ]
+}
