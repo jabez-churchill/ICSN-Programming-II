@@ -15,13 +15,13 @@ myData = {
 # Dictionary for Python
 # TODO(2) Add New Programming Terms here. All of these keys and values should be Strings, inside quotation marks ("").
 
-#____FORMAT____
-# {term: description}
+#____FORMAT____ 
+# {term: description} 
 
-#___TERMS____
-# 1. dictionary
-# 2. list
-# 3. function
+#___TERMS____ 
+# 1. dictionary 
+# 2. list 
+# 3. function 
 # 4. variable 
 
 

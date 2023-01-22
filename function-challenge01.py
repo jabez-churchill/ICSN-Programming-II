@@ -27,14 +27,18 @@ defectList = [
         ]
 
 # TODO(4) a dictionary of lists (as values).
+dictionaryOfCarAttributes = {
+        # Key        Value (an Array)
+
+        }
 
 
-
-# DONE(2) generate Random Int to use as List Index
+# TODO(3) Define a Random Number Generator function that requires one parameter
+#
 def GetRandomInt(listSize):
-    # randomInt = random.randint(0,10) # HOW DO WE MAKE THIS ADAPT TO DIFFERENT SIZE LISTS?
-    randomInt = random.randint(0,listSize)
-    return randomInt
+        # !!! Start here. Copy this pattern.
+        randomInt = random.randint(0,listSize)
+        return randomInt
 
 
 # NOTDONE(3) Define function that uses our random int as an index in each list, and prints results.
