@@ -27,7 +27,7 @@ defectList = [
         "that runs only on uranium."
         ]
 
-# TODO(4) a dictionary of lists (as values).
+# TODO(4): a dictionary of lists (as values).
 dictionaryOfCarAttributes = {
         # Key        Value (an Array)
         "carBrands": brandList,
@@ -36,6 +36,11 @@ dictionaryOfCarAttributes = {
         "carEngineSize": engineSizeList,
         "carDefect": defectList
         }
+
+# TODO(4): The function Len() returns a Lenth.
+# 
+# print(len(brandList))
+# print(brandList)
 
 
 # TODO(3): Random (Legal) Index Generator
@@ -46,11 +51,6 @@ def GetRandomListIndex(list):
 
         randomInt = random.randint(0,len(list)-1)
         return randomInt
-
-# TODO(4): The function Len() returns a Lenth.
-# 
-# print(len(brandList))
-# print(brandList)
 
 
 # TODO(): Test your random number generator with a print.
@@ -90,10 +90,24 @@ def GetNewRandomCollection(collection: dict):
         return newDescription
 
 
+def AnotherNewRandomCollection():
+        # Declare local variables, casts all datatypes as strings, returns one string
+        brand = str(brandList[GetRandomListIndex(brandList)])
+        doors = str(doorNumberList[GetRandomListIndex(doorNumberList)])
+        wheelD = str(wheelDriveList[GetRandomListIndex(wheelDriveList)])
+        litreE = str(engineSizeList[GetRandomListIndex(engineSizeList)])
+        defect = str(defectList[GetRandomListIndex(defectList)])
+
+        # Declare a new string to Return, construct sentence with local variables
+        myString = doors + "-door, " + wheelD + "-wheel drive " + brand + " with a " + litreE + " engine " +  defect
+
+        return myString
+
 
 
 # TODO(7) Add more values to some of your lists, so they're unequal... and call your Function!
 # Now, it shouldn't matter how many lists you have, or how many values each list has. 
 
-print(GetNewRandomCollection(dictionaryOfCarAttributes))
+print(AnotherNewRandomCollection())
+# print(GetNewRandomCollection(dictionaryOfCarAttributes))
 print("yay ☺")

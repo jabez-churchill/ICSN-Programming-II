@@ -23,7 +23,9 @@ defectList = [
         "with heavy fire damage.",
         "that occasionally explodes.",
         "modified to use only three wheels.",
-        "made of 100% beef."
+        "made of 100% beef.",
+        "that runs only on uranium."
+
         ]
 
 # TODO(4) a dictionary of lists (as values).
@@ -40,8 +42,6 @@ def GetRandomInt(listSize):
         randomInt = random.randint(0,listSize)
         return randomInt
 
-
-# NOTDONE(3) Define function that uses our random int as an index in each list, and prints results.
 
 
 # TODO(5) Define a function that requires one PARAMETER. 
