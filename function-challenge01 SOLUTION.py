@@ -68,11 +68,11 @@ def GetRandomListIndex(list):
 # def PrintARandomCarDescription(dictionaryFullOfCarAttributes):
 #         # create a new LOCAL variable and fetch each of your random attributes.
 
-#         brand = brandList[GetRandomListIndex(len(brandList))]
-#         door = doorNumberList[GetRandomListIndex(len(doorNumberList))]
-#         wheelDrive = wheelDriveList[GetRandomListIndex(len(wheelDriveList))]
-#         engineSize = engineSizeList[GetRandomListIndex(len(engineSizeList))]
-#         defect = defectList[GetRandomListIndex(len(defectList))]                
+#         brand = brandList[GetRandomListIndex(brandList)]
+#         door = doorNumberList[GetRandomListIndex(doorNumberList)]
+#         wheelDrive = wheelDriveList[GetRandomListIndex(wheelDriveList)]
+#         engineSize = engineSizeList[GetRandomListIndex(engineSizeList)]
+#         defect = defectList[GetRandomListIndex(defectList)]                
 
 #         print(doorNumberList + "-door, " + wheelDrive + "-wheel drive" + brand + " with " +  defect)               
 
