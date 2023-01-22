@@ -25,15 +25,11 @@ defectList = [
         "modified to use only three wheels.",
         "made of 100% beef.",
         "that runs only on uranium."
-
         ]
 
-# TODO(4) a dictionary of lists (as values).
-dictionaryOfCarAttributes = {
-        # Key        Value (an Array)
 
-        }
-
+# Letzgo. How do you work with Lists all of different lengths?
+# We need a HELPER function to return the size of each List.
 
 # TODO(3) Define a Random Number Generator function that requires one parameter
 #
