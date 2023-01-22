@@ -32,13 +32,15 @@ dictionaryOfCarAttributes = {
         "carBrands": brandList,
         "carDoors" : doorNumberList,
         "carWheelDrive:": wheelDriveList,
-        "carEngineSize": engineSizeList
+        "carEngineSize": engineSizeList,
+        "carDefect": defectList
         }
 
 
 # TODO(3): Random Number Generator, takes one argument.
 def GetRandomListIndex(listSize):
         # randomInt = random.randint(0,10) # HOW DO WE MAKE THIS ADAPT TO DIFFERENT SIZE LISTS?***
+        # We're gonna change this from a random number generator, to return a legal index position.
         # !!! Start here. Note this pattern.
 
         randomInt = random.randint(0,listSize-1)
@@ -61,20 +63,36 @@ def GetRandomListIndex(listSize):
 # TODO() Define a function that requires one PARAMETER. 
 # This function will print random values from of each list.
 # You'll pass in your dictionary when it's called. 
-def PrintARandomCarDescription(dictionaryFullOfCarAttributes):
-        # create a new LOCAL variable and fetch each of your random attributes.
-        brand = brandList[GetRandomListIndex(len(brandList))]
-        door = doorNumberList[GetRandomListIndex(len(doorNumberList))]
-        wheelDrive = wheelDriveList[GetRandomListIndex(len(wheelDriveList))]
-        engineSize = engineSizeList[GetRandomListIndex(len(engineSizeList))]
-        defect = defectList[GetRandomListIndex(len(defectList))]
 
-        print(doorNumberList + "-door, " + wheelDrive + "-wheel drive" + brand + " with " +  defect)               
+# def PrintARandomCarDescription(dictionaryFullOfCarAttributes):
+#         # create a new LOCAL variable and fetch each of your random attributes.
+
+#         brand = brandList[GetRandomListIndex(len(brandList))]
+#         door = doorNumberList[GetRandomListIndex(len(doorNumberList))]
+#         wheelDrive = wheelDriveList[GetRandomListIndex(len(wheelDriveList))]
+#         engineSize = engineSizeList[GetRandomListIndex(len(engineSizeList))]
+#         defect = defectList[GetRandomListIndex(len(defectList))]                
+
+#         print(doorNumberList + "-door, " + wheelDrive + "-wheel drive" + brand + " with " +  defect)               
+
+def GetNewRandomCollection(collection: dict):
+        # Declare a new empty local variable, a list to keep one random value from each category.
+        newList = []
+
+        # Grab one random value from each category.
+        for category in collection.values():
+                newList.append(str(category[GetRandomListIndex(len(category))]))
+
+        # Declare a new local variable that will hold your output string.
+        newDescription = ""
+        newDescription = newList[1] + "-door, " + newList[2] + "-wheel drive " + newList[0] + " with " +  newList[3] + " engine, " + newList[4]
+        return newDescription
+
+
 
 
 # TODO(7) Add more values to some of your lists, so they're unequal... and call your Function!
-# !!! This isn't good. Maybe try the dictionary. Have your function use dictionary.
 # Now, it shouldn't matter how many lists you have, or how many values each list has. 
 
-PrintARandomCarDescription()
+print(GetNewRandomCollection(dictionaryOfCarAttributes))
 print("yay ☺")
