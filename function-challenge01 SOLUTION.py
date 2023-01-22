@@ -23,7 +23,8 @@ defectList = [
         "with heavy fire damage.",
         "that occasionally explodes.",
         "modified to use only three wheels.",
-        "made of 100% beef."
+        "made of 100% beef.",
+        "that runs only on uranium."
         ]
 
 # TODO(4) a dictionary of lists (as values).
@@ -37,13 +38,13 @@ dictionaryOfCarAttributes = {
         }
 
 
-# TODO(3): Random Number Generator, takes one argument.
-def GetRandomListIndex(listSize):
+# TODO(3): Random (Legal) Index Generator
+def GetRandomListIndex(list):
         # randomInt = random.randint(0,10) # HOW DO WE MAKE THIS ADAPT TO DIFFERENT SIZE LISTS?***
         # We're gonna change this from a random number generator, to return a legal index position.
         # !!! Start here. Note this pattern.
 
-        randomInt = random.randint(0,listSize-1)
+        randomInt = random.randint(0,len(list)-1)
         return randomInt
 
 # TODO(4): The function Len() returns a Lenth.
@@ -81,7 +82,7 @@ def GetNewRandomCollection(collection: dict):
 
         # Grab one random value from each category.
         for category in collection.values():
-                newList.append(str(category[GetRandomListIndex(len(category))]))
+                newList.append(str(category[GetRandomListIndex(category)]))
 
         # Declare a new local variable that will hold your output string.
         newDescription = ""
