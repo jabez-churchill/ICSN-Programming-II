@@ -49,7 +49,7 @@ defectList = [
 # Letzgo. How do you work with Lists if they're all different lengths?
 
 # TODO(0): Get familiar with functions: len() and str().
-# LEN. Let's use len() to return the size of each List.
+# LEN() = Length. Let's use len() to return the size of a List.
 # CASTING. To ensure that our return value is the Data Type what we need (a string).
 
 
@@ -70,6 +70,7 @@ print(randomAttributeGrabber(brandList))
         # Grab a random value for each category using your Helper Function.
         # Declare a string, build your output sentence.
         # Return the completed string.
+
 def BuildRandomCar():
     carBrand = randomAttributeGrabber(brandList)
     carDoors = randomAttributeGrabber(doorNumberList)
