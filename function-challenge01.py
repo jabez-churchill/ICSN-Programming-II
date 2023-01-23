@@ -46,12 +46,12 @@ defectList = [
         ]
 
 
-# Letzgo. How do you work with Lists if they're all different lengths?
+# Letzgo. Open your file, you should already have some lists.
+# How do you work with Lists if they're all different lengths?
 
 # TODO(0): Get familiar with functions: len() and str().
 # LEN. Let's use len() to return the size of each List.
 # CASTING. To ensure that our return value is the Data Type what we need (a string).
-
 
 
 # TODO(1): Make a "helper function" that TAKES one list, and RETURNS a value using a random index position.
