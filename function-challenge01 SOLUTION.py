@@ -2,16 +2,34 @@ import random
 
 # DONE(1) Lists
 brandList = [
-        "Acura",
+        "Jaguar",
+        "Ferrari",
+        "Volkswagen",
+        "Suzuki",
+        "Audi",
+        "Volvo",
+        "Mitsubishi",
+        "Chevrolet",
+        "Chrysler",
+        "Cadillac",
+        "Corvette",
         "Honda",
         "BMW",
-        "Ferrari",
         "Ford",
-        "Toyota",
-        "Audi",
         "Dodge",
-        "Cadillac",
-        "Chevy"
+        "Porsche",
+        "Kia",
+        "Saab",
+        "Subaru",
+        "Lexus",
+        "Tesla",
+        "Hyundai",
+        "Mazda",
+        "Jeep",
+        "Rolls-Royce",
+        "Mercedes-Benz",
+        "Nissan",
+        "Lamborghini"
         ]
 
 doorNumberList = [2, 4, 5]
@@ -27,87 +45,41 @@ defectList = [
         "that runs only on uranium."
         ]
 
-# TODO(4): a dictionary of lists (as values).
-dictionaryOfCarAttributes = {
-        # Key        Value (an Array)
-        "carBrands": brandList,
-        "carDoors" : doorNumberList,
-        "carWheelDrive:": wheelDriveList,
-        "carEngineSize": engineSizeList,
-        "carDefect": defectList
-        }
 
-# TODO(4): The function Len() returns a Lenth.
-# 
-# print(len(brandList))
-# print(brandList)
+# Letzgo. How do you work with Lists if they're all different lengths?
 
-
-# TODO(3): Random (Legal) Index Generator
-def GetRandomListIndex(list):
-        # randomInt = random.randint(0,10) # HOW DO WE MAKE THIS ADAPT TO DIFFERENT SIZE LISTS?***
-        # We're gonna change this from a random number generator, to return a legal index position.
-        # !!! Start here. Note this pattern.
-
-        randomInt = random.randint(0,len(list)-1)
-        return randomInt
-
-
-# TODO(): Test your random number generator with a print.
-# by calling print, then enter a list name, but add square brackets [] (An index number)
-# Then, call your function in the square brackets.
-# Finally, add the argument len() that contains your list name again.
-#print(brandList[GetRandomInt(len(brandList))])
+# TODO(0): Get familiar with functions: len() and str().
+# LEN. Let's use len() to return the size of each List.
+# CASTING. To ensure that our return value is the Data Type what we need (a string).
 
 
 
-# TODO() Define a function that requires one PARAMETER. 
-# This function will print random values from of each list.
-# You'll pass in your dictionary when it's called. 
+# TODO(1): Make a "helper function" that TAKES one list, and RETURNS a value using a random index position.
+def randomAttributeGrabber(attributeList: list):
+    # Get a random number, make sure it's a legal index number by using len()
+    randomIndexNumber = random.randrange(0, len(attributeList))
+    # Get a random list value (string)
+    randomStringFromList = attributeList[randomIndexNumber]
+    # Return the value, but cast it as a string.
+    return str(randomStringFromList)
 
-# def PrintARandomCarDescription(dictionaryFullOfCarAttributes):
-#         # create a new LOCAL variable and fetch each of your random attributes.
+# Test: Print your function, pass in a list.
+print(randomAttributeGrabber(brandList))
 
-#         brand = brandList[GetRandomListIndex(brandList)]
-#         door = doorNumberList[GetRandomListIndex(doorNumberList)]
-#         wheelDrive = wheelDriveList[GetRandomListIndex(wheelDriveList)]
-#         engineSize = engineSizeList[GetRandomListIndex(engineSizeList)]
-#         defect = defectList[GetRandomListIndex(defectList)]                
+# TODO(2): Declare your main function that Returns a new random car configuration.
+        # Grab a random value for each category using your Helper Function.
+        # Declare a string, build your output sentence.
+        # Return the completed string.
+def BuildRandomCar():
+    carBrand = randomAttributeGrabber(brandList)
+    carDoors = randomAttributeGrabber(doorNumberList)
+    carWheelD = randomAttributeGrabber(wheelDriveList)
+    carEngineL = randomAttributeGrabber(engineSizeList)
+    carDefect = randomAttributeGrabber(defectList)
 
-#         print(doorNumberList + "-door, " + wheelDrive + "-wheel drive" + brand + " with " +  defect)               
+    newCarDescription = ""
+    newCarDescription = carDoors + "-door, " + carWheelD + "-wheel drive " + carBrand + " with a " + carEngineL + " engine " +  carDefect
+    return newCarDescription
 
-def GetNewRandomCollection(collection: dict):
-        # Declare a new empty local variable, a list to keep one random value from each category.
-        newList = []
-
-        # Grab one random value from each category.
-        for category in collection.values():
-                newList.append(str(category[GetRandomListIndex(category)]))
-
-        # Declare a new local variable that will hold your output string.
-        newDescription = ""
-        newDescription = newList[1] + "-door, " + newList[2] + "-wheel drive " + newList[0] + " with " +  newList[3] + " engine, " + newList[4]
-        return newDescription
-
-
-def AnotherNewRandomCollection():
-        # Declare local variables, casts all datatypes as strings, returns one string
-        brand = str(brandList[GetRandomListIndex(brandList)])
-        doors = str(doorNumberList[GetRandomListIndex(doorNumberList)])
-        wheelD = str(wheelDriveList[GetRandomListIndex(wheelDriveList)])
-        litreE = str(engineSizeList[GetRandomListIndex(engineSizeList)])
-        defect = str(defectList[GetRandomListIndex(defectList)])
-
-        # Declare a new string to Return, construct sentence with local variables
-        myString = doors + "-door, " + wheelD + "-wheel drive " + brand + " with a " + litreE + " engine " +  defect
-
-        return myString
-
-
-
-# TODO(7) Add more values to some of your lists, so they're unequal... and call your Function!
-# Now, it shouldn't matter how many lists you have, or how many values each list has. 
-
-print(AnotherNewRandomCollection())
-# print(GetNewRandomCollection(dictionaryOfCarAttributes))
-print("yay ☺")
+# Test by printing your new main Function.
+print(BuildRandomCar())

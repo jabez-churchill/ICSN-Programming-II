@@ -2,16 +2,34 @@ import random
 
 # DONE(1) Lists
 brandList = [
-        "Acura",
+        "Jaguar",
+        "Ferrari",
+        "Volkswagen",
+        "Suzuki",
+        "Audi",
+        "Volvo",
+        "Mitsubishi",
+        "Chevrolet",
+        "Chrysler",
+        "Cadillac",
+        "Corvette",
         "Honda",
         "BMW",
-        "Ferrari",
         "Ford",
-        "Toyota",
-        "Audi",
         "Dodge",
-        "Cadillac",
-        "Chevy"
+        "Porsche",
+        "Kia",
+        "Saab",
+        "Subaru",
+        "Lexus",
+        "Tesla",
+        "Hyundai",
+        "Mazda",
+        "Jeep",
+        "Rolls-Royce",
+        "Mercedes-Benz",
+        "Nissan",
+        "Lamborghini"
         ]
 
 doorNumberList = [2, 4, 5]
@@ -28,25 +46,26 @@ defectList = [
         ]
 
 
-# Letzgo. How do you work with Lists all of different lengths?
-# We need a HELPER function to return the size of each List.
+# Letzgo. How do you work with Lists if they're all different lengths?
 
-# TODO(3) Define a Random Number Generator function that requires one parameter
-#
-def GetRandomInt(listSize):
-        # !!! Start here. Copy this pattern.
-        randomInt = random.randint(0,listSize)
-        return randomInt
+# TODO(0): Get familiar with functions: len() and str().
+# LEN. Let's use len() to return the size of each List.
+# CASTING. To ensure that our return value is the Data Type what we need (a string).
 
 
 
-# TODO(5) Define a function that requires one PARAMETER. 
-# You'll pass in your dictionary when it's called. 
+# TODO(1): Make a "helper function" that TAKES one list, and RETURNS a value using a random index position.
+    # Get a random number, make sure it's a legal index number by using len()
+    # Get a random list value (string)
+    # Return the value, but cast it as a string.
 
-# TODO(6) Your function will print random values from of each list.
-# HINT: Start by printing a random value of one list.
+# Test: Print your function, pass in a list.
 
-# TODO(7) Add more values to some of your lists, so they're unequal.
-# Now, it shouldn't matter how many lists you have, or how many values each list has. 
 
-print("yay ☺")
+# TODO(2): Declare your main function that Returns a new random car configuration.
+        # Grab a random value for each category using your Helper Function.
+        # Declare a string, build your output sentence.
+        # Return the completed string.
+
+
+# Test by printing your new main Function.
