@@ -77,5 +77,4 @@ def Test2():
     print(greetingString)
     print(excuseString)
 
-Test2()
-
+Test1()
