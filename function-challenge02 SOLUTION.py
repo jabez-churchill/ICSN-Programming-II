@@ -13,8 +13,6 @@ greetingList = [
     "Affirmative Greeting",
     "Ahoy there."
 ]
-
-
 # TODO(2): List[string] of 10 questions (that investigate if someone is a bot or a human)).
 questionList = [
     "How many years ago was your disgusting human birth?",
@@ -28,7 +26,6 @@ questionList = [
     "Are you a robot?",
     "Have you seen a robot around here, Human?"
 ]
-
 # TODO(3): List[string] of 10 answers (like a bot is trying to guess human-like answers). 
 answerList = [
     "I was manufactured in 2022, approximatly one year ago.",
@@ -55,8 +52,6 @@ excuseList = [
     "It was nice meeting another human, such as yourself. And myself.",
     "My waste has the properties of liquid, so I must find a waste-room."
 ]
-# !!! Use natural language with correct spelling and grammar.
-
 
 # TODO(4): Make a dictionary with keys "greetings", "questions", "answers", and "excuses".
 conversationDictionary = {
@@ -67,10 +62,20 @@ conversationDictionary = {
 }
 
 
-# TODO(5): Test some of your Questions and Answers:
-indexQA = int(input("Enter a number between 1 and 10..."))-1
-print("QUESTION: " + questionList[indexQA]) 
-print("ANSWER: " + answerList[indexQA])
+# TODO(5): Fix this function, then call it to test some of your Questions and Answers:
+def Test1():
+    indexQA = int(input("Enter a number between 1 and 10..."))-1 
+    print("QUESTION: " + questionList[indexQA]) # FIX
+    print("ANSWER: " + answerList[indexQA]) # FIX
 
-# TODO(6): Figure out how to print a list value FROM your dictionary.
+# TODO(6): Figure out how to print a Greeting and Excuse together... but FROM your dictionary.
+def Test2():
+    indexInt = int(input("Enter a number between 1 and 10..."))-1
+    greetingString = "GREETING:  " + conversationDictionary["greetings"][indexInt]
+    excuseString = "EXCUSE:  " + conversationDictionary["excuses"][indexInt]
+    print("TEST 2:")
+    print(greetingString)
+    print(excuseString)
+
+Test2()
 
