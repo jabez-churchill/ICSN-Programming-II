@@ -69,7 +69,7 @@ conversationDictionary = {
 
 # TODO(5): Test some of your Questions and Answers:
 indexQA = int(input("Enter a number between 1 and 10..."))-1
-print("QUESTION: " + questionList[indexQA])  # You need to change these to YOUR List Names
+print("QUESTION: " + questionList[indexQA]) 
 print("ANSWER: " + answerList[indexQA])
 
 # TODO(6): Figure out how to print a list value FROM your dictionary.
