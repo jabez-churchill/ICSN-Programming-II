@@ -196,20 +196,31 @@ botDialogDictionary = {
     "excuses": excuseList
 }
 
-# TODO(0) Print a value from a list, through the dictionary.
+# TODO(0) Print a value from a list, through the dictionary category (key).
+while(True):
+
+    listIndex = int(input("Test a list number..."))
+
+    if(listIndex<len(greetingList)):
+        print(greetingList[listIndex])
+        print(botDialogDictionary.get("greetings")[listIndex])
+    else:
+        print("Try a smaller number, that index doesn't exist.")
+
+
 
 
 # TODO(1) Function: Returns a random value from the list associated with the dictionary KEY you pass in.
 def GetRandomValueFromDictionary(dictionaryKey):
     string = ""
     listLength = len(botDialogDictionary.get(dictionaryKey)) # use this for the max value of randrange()
-    # Your script goes here.
+    # Your script goes here...
 
     return string
 
 
 # Unit Test: Should return different greeting each time you call it.
-print(GetRandomValueFromDictionary("greetings"))
+# print(GetRandomValueFromDictionary("greetings"))
 
 
 # TODO(2): Write a function that takes a message, finds it in your lists, and returns the dictionary KEY.
@@ -224,7 +235,7 @@ print(GetRandomValueFromDictionary("greetings"))
                 # return the CATEGORY (that's the dictionary key)
 
 
-# TO TEST: Should print out the KEY "questions".
+# Unit Test: Should print out the KEY "questions".
 # print(FindContext("Are you a computer program?"))
 
 
