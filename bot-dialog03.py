@@ -235,9 +235,9 @@ def FindContextAlternative(messageRecieved):
             return category
 
 
-# TODO(1): Bot I/O logic, using "nested" conditional statements.
-# https://www.geeksforgeeks.org/nested-if-statement-in-python/
-# Use the functions we made so far in NESTED CONDITIONAL STATEMENTS, to return these:
+# TODO(1): Bot I/O logic, using conditional statements.
+# https://www.geeksforgeeks.org/python-if-else/
+# Use the functions we made so far in CONDITIONAL STATEMENTS (if, elif, else), to return these:
 def SpeakToThisBot(messageReceived):
     # Find the context of the message
     # If greeting, return a random greeting.
