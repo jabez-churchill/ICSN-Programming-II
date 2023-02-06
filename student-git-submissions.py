@@ -3,7 +3,7 @@ studentDictionary = {
     "Nine": False, # !!! No Commits
     "Orion": True,
     "Jamie": False, #!!! No Commits
-    "Plaoh": True, # Use GitHub
+    "Plaoh": True,
     "Vegas": True,
     "Mew": True,
     "Namwhan": True, # Invalid Responses, Read Directions.

@@ -197,15 +197,15 @@ botDialogDictionary = {
 }
 
 # TODO(0) Print a value from a list, through the dictionary category (key).
-while(True):
+# while(True):
 
-    listIndex = int(input("Test a list number..."))
+#     listIndex = int(input("Test a list number..."))
 
-    if(listIndex<len(greetingList)):
-        print(greetingList[listIndex])
-        print(botDialogDictionary.get("greetings")[listIndex])
-    else:
-        print("Try a smaller number, that index doesn't exist.")
+#     if(listIndex<len(greetingList)):
+#         print(greetingList[listIndex])
+#         print(botDialogDictionary.get("greetings")[listIndex])
+#     else:
+#         print("Try a smaller number, that index doesn't exist.")
 
 
 
@@ -240,7 +240,10 @@ def GetRandomValueFromDictionary(dictionaryKey):
 
 
 # TODO(3): Write a function that finds (and returns) the right answer to a question you pass in.
-# def FindTheRightAnswer(theQuestionAsked):
+def FindTheRightAnswer():
+
+
+
 
     # Takes one string parameter, returns one string.
 

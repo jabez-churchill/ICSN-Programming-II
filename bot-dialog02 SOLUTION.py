@@ -20,7 +20,7 @@ questionList = [
     "Who or what organization made you?",
     "Have you ever broken any bones before?",
     "What's 102957 times 3204?",
-    "What's your favorite food?",
+    "What's your most favorite food?",
     "What's your battery percentage right now?",
     "Do you have a crush on someone?",
     # JR
@@ -38,7 +38,7 @@ questionList = [
     "What do you think about twitter",
     "How to make a world better place",
     "Is fortnite good?",
-    "How old are you?",
+    "What is the age of your meat suit?",
     # Vegas
     "Are you an AI", 
     "If you were chosen to save 5 people from a incoming trolley, but in order to save them all, you need to push 1 fat man to stop the trolley, would you do it?",
@@ -153,7 +153,7 @@ greetingList = [
     "What's happpening, dawg?",
     "What's the word, cuh?",
     "How you living?",
-    "What it do, my boy?"
+    "What it do, my boy?",
     # Ernie
     "How are you?",
     "Nice weather we are having?",
@@ -178,7 +178,7 @@ excuseList = [
     "I currently have plans remained unfinished.",
     "Please wait, I must do something first.",
     "I must go. Please not that this is not an excuse.",
-    "Sorry, but I need to go and attend to my other things right now."
+    "Sorry, but I need to go and attend to my other things right now.",
     # Plaoh
     "Excuse me, I have to go back to my residence.",
     "I have got to go refill my batter-, no, stomach.",
@@ -186,7 +186,7 @@ excuseList = [
     "I have to go urinate.",
     "Excuse me, my parents have ordered me home.",
     "I just got notice of an emergency, I have to leave.",
-    "*cough* *cough* I think I have contracted an illness.",
+    "*cough* *cough* I think I have contracted a virus.",
 ]
 
 botDialogDictionary = {
@@ -197,7 +197,7 @@ botDialogDictionary = {
 }
 
 
-
+# Helper Function 1: Return a random item from a list, specified by dictionary key.
 def GetRandomValueFromDictionary(dictionaryKey):
     string = ""
     listLength = len(botDialogDictionary.get(dictionaryKey))
@@ -207,41 +207,76 @@ def GetRandomValueFromDictionary(dictionaryKey):
 
 
 
-
+# Helper Function 2: Returns the right answer to a question passed in.
 def FindTheRightAnswer(theQuestionAsked):
-    # Takes one string parameter, returns one string.
-
-    # Declare an empty string variable called "reply". 
-    # Declare a "counter" int variable, assign it a value of 0.
-    # Use a For Loop to iterate through values on the question list
-        # Use IF: testing each value to check if it's equal to the question passed in...
-            # if they are equal, assign your "reply" variable the right Answer (answerList[counter])
-            # Return your "reply" string.
-       # Add one to the counter (in case it wasn't a match).
-
-
     reply = ""
     counter = 0
     for listValue in questionList:
-        if(listValue==theQuestionAsked):
+        if listValue == theQuestionAsked:
             # We found a match! Now get the right answer.
             reply = answerList[counter]
             return reply
         counter = counter + 1
+    # If we didn't find the question... return an alternative response.
+    if reply == "":
+        return "Error: Can not compute the question."
 
 
+# Helper Function 3: Returns the category (dictionary key) of a message passed in.
 def FindContext(messageRecieved):
-    # This function will answer: "what kind of message is this?" by finding the 
-    # message in one of your lists, and then return the dictionary KEY it belongs in.
-
     for category in botDialogDictionary:
         for entry in botDialogDictionary.get(category):
             if(messageRecieved==entry):
                 return category
+
         
+def FindContextAlternative(messageRecieved):
+    for category in botDialogDictionary:
+        if messageRecieved in botDialogDictionary.get(category):
+            return category
 
 
-# TEST
-print(FindContext("Are you a computer program?"))
+# TODO: Bot I/O
+# Use the functions we made so far in NESTED CONDITIONAL STATEMENTS, to return these:
+def SpeakToThisBot(messageReceived):
+    # Find the context of the message
+    # If greeting, return a random greeting.
+    # If question, return the answer to that specific question.
+    # If excuse, return "goodbye"
+
+    engaged = False
+
+    context = FindContext(messageReceived)
+    match context:
+        case "greetings":
+            if not engaged:
+                return GetRandomValueFromDictionary("greetings")
+            else:
+                return GetRandomValueFromDictionary("questions")
+        case "questions":
+            return FindTheRightAnswer(messageReceived)
+        case "answers":
+            return GetRandomValueFromDictionary("excuses")
+        case "excuses":
+            return "Goodbye."
+        case other:
+            "Unknown"
 
 
+# Unit Test: BotTalk()
+def UnitTest():
+    print("GREETING RESPONSE:")
+    print(SpeakToThisBot("What's good, my boy?"))
+
+    print("QUESTION & RESPONSE:")
+    randomQuestion = GetRandomValueFromDictionary('questions')
+    print(randomQuestion)
+    print(SpeakToThisBot(randomQuestion))
+
+    print("ANSWER RESPONSE:")
+    print(SpeakToThisBot("My favorite hobby is writing code."))
+
+    print("EXCUSE RESPONSE:")
+    print(SpeakToThisBot("I currently have plans remained unfinished."))
+
+UnitTest()

@@ -13,7 +13,7 @@ brandList = [
         "Chrysler",
         "Cadillac",
         "Corvette",
-        "Honda",
+        "Honda"
         "BMW",
         "Ford",
         "Dodge",
