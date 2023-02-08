@@ -240,20 +240,18 @@ def FindContextAlternative(messageRecieved):
 # Use the functions we made so far in CONDITIONAL STATEMENTS (if, elif, else), to return these:
 def SpeakToThisBot(messageReceived):
     # Find the context of the message
+    contextOfMessage = FindContext(messageReceived)
+
     # If greeting, return a random greeting.
+    if contextOfMessage == "greetings":
+        return GetRandomValueFromDictionary("greetings")
+    
     # If question, return the answer to that specific question.
-    # If excuse, return "goodbye"
-    context = FindContext(messageReceived)
-    if context == "greetings":
-        return GetRandomValueFromDictionary(context)
-    elif context == "questions":
+    elif contextOfMessage == "question":
         return FindTheRightAnswer(messageReceived)
-    elif context == "answers":
-        return GetRandomValueFromDictionary("excuses")
-    elif context == "excuses":
-        return "Goodbye."
-    else:
-        return "ERROR. Can not compute."
+    # If answer, return an excuse.
+    # If excuse, return "goodbye"
+    return ""
 
 
 # TODO(2): Bot I/O logic, using a "switch" or match-case statement.
@@ -264,18 +262,7 @@ def SpeakToThisBot2(messageReceived):
     # If greeting, return a random greeting.
     # If question, return the answer to that specific question.
     # If excuse, return "goodbye"
-    context = FindContext(messageReceived)
-    match context:
-        case "greetings":
-            return GetRandomValueFromDictionary("greetings")
-        case "questions":
-            return FindTheRightAnswer(messageReceived)
-        case "answers":
-            return GetRandomValueFromDictionary("excuses")
-        case "excuses":
-            return "Goodbye."
-        case other:
-            "Unknown"
+    return ""
 
 
 # Unit Test: 
